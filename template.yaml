@@ -23,7 +23,7 @@ Resources:
         LeapYear:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /hello
+            Path: /leap-year
             Method: get
             RequestParameters:
               - method.request.querystring.numbers:
@@ -35,7 +35,7 @@ Outputs:
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
   LeapYearApi:
     Description: "API Gateway endpoint URL for Prod stage for Leap Year function"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/leap-year/"
   LeapYearFunction:
     Description: "Leap Year Lambda Function ARN"
     Value: !GetAtt LeapYearFunction.Arn
